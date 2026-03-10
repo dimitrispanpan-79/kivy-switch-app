@@ -6,11 +6,13 @@ workflows:
       vars:
         ANDROID_HOME: /opt/android-sdk-linux
     scripts:
-      - echo "Starting build"
+      # Update pip
+      - python3 -m pip install --upgrade pip
+      # Install required Python packages
+      - pip install kivy openpyxl cython buildozer
+      # Check Buildozer version
+      - buildozer --version
+      # Build APK
       - buildozer android debug
     artifacts:
-      - app/bin/*.apk
-    publishing:
-      email:
-        recipients:
-          - dimitrispanpan@gmail.com  # optional: replace with your email
+      - bin/*.apk
