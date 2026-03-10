@@ -1,2 +1,6 @@
 kivy
+<<<<<<< HEAD
 openpyxl
+=======
+openpyxl
+>>>>>>> b1ddfcbd10fd37a80217fcdc4b7697e91defbc61

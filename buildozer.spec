@@ -12,3 +12,4 @@ fullscreen = 0
 [buildozer]
 log_level = 2
 warn_on_root = 1
+ b1ddfcbd10fd37a80217fcdc4b7697e91defbc61
