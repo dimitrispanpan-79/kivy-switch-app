@@ -13,6 +13,4 @@ workflows:
     publishing:
       email:
         recipients:
-          - your-email@example.com  # optional: replace with your email
-        on_success: all
-        on_failure: all
+          - dimitrispanpan@gmail.com  # optional: replace with your email
