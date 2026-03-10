@@ -3,18 +3,17 @@ workflows:
     name: Android Build
     max_build_duration: 90
     environment:
+      python: 3.10  # Codemagic-supported Python version with distutils
       vars:
         ANDROID_HOME: /opt/android-sdk-linux
     scripts:
-      # Install Python 3.11
-      - sudo apt-get update
-      - sudo apt-get install -y python3.11 python3.11-venv python3.11-dev python3.11-distutils
-      - python3.11 -m pip install --upgrade pip
-      # Install Buildozer and dependencies in Python 3.11
-      - python3.11 -m pip install kivy openpyxl cython buildozer
-      # Check Buildozer version
-      - python3.11 -m buildozer --version
-      # Build APK using Python 3.11
-      - python3.11 -m buildozer android debug
+      # Upgrade pip
+      - pip install --upgrade pip
+      # Install Buildozer and Python dependencies
+      - pip install kivy openpyxl cython buildozer
+      # Check Buildozer
+      - buildozer --version
+      # Build APK
+      - buildozer android debug
     artifacts:
       - bin/*.apk
